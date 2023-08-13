@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya:ital@1&family=Cormorant+Infant:ital,wght@1,300&family=REM:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Insider cinema</title>
+    <style>
+      .header {
+        display: grid;
+        background-image: url(assets/insider.png);
+        background-color: #333333;
+        grid-row: 1/4;
+        height: 65vh;
+        width: 100vw;
+      }
+
+      .nav {
+        text-align: right;
+        margin-right: 10%;
+        text-decoration: none;
+        font-size: 20pt;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: rgb(227, 8, 234);
+      }
+      a:active {
+        text-decoration: solid;
+        color: rgb(222, 59, 173);
+        font-weight: bold;
+      }
+
+      h1 {
+        position: absolute;
+        color: aliceblue;
+        font-family: "Press Start 2P", Times, cursive;
+        font-size: 50pt;
+        margin-left: 40%;
+        margin-top: 17%;
+      }
+
+      body {
+        background-color: #333333;
+        color: aliceblue;
+        font-family: "Press Start 2P", Times, cursive;
+      }
+
+      img {
+        height: 20px;
+        width: 20px;
+        color: aliceblue;
+      }
+      .section_img {
+        height: 150px;
+        width: 200px;
+      }
+
+      video {
+        height: 150px;
+        width: 200px;
+      }
+
+      .search {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        height: 9%;
+        width: 12%;
+      }
+      .container {
+        display: grid;
+        /* gap:20%; */
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 20% 1fr 7%;
+        grid-template-areas:
+          "header header"
+          "aside main"
+          "footer footer";
+        height: 100vh;
+      }
+      .aside {
+        display: grid;
+        background-color: #a17eed;
+        height: 100vh;
+        width: 15vw;
+      }
+
+      .main {
+        grid-template-rows: repeat(2, 1fr);
+        gap: 7%;
+        text-align: left;
+      }
+
+      .footer {
+        display: grid;
+        background-color: #1f1833;
+        grid-column: 1 / 4;
+        grid-row: 3/3;
+        width: 100vw;
+        text-align: center;
+      }
+      @media screen and(max-width:1200px) {
+        .header {
+          height: 41vh;
+        }
+        .container {
+          height: 100%;
+        }
+
+        h1 {
+          font-size: 34pt;
+          margin-left: 45%;
+          margin-top: 7%;
+        }
+        .footer {
+          display: none;
+        }
+        .nav {
+          text-align: center;
+          margin: 1%;
+          font-size: 10pt;
+        }
+        .search {
+          top: 19%;
+        }
+
+        body {
+          font-size: 10pt;
+        }
+
+        .aside {
+          width: 23vw;
+        }
+        .section_img {
+          height: 80px;
+          width: 100px;
+        }
+
+        video {
+          height: 80px;
+          width: 100px;
+        }
+      }
+      @media screen and(max-width:767px) {
+        .container {
+          max-width: 750px;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          grid-template-areas:
+            "header header"
+            "aside main";
+        }
+        .nav {
+          display: none;
+        }
+      }
+
+      @media screen and(max-width:415px) {
+        .container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        .header {
+          height: 42vh;
+        }
+        .nav {
+          font-size: 10pt;
+          text-align: center;
+        }
+        h1 {
+          font-size: 26pt;
+          margin-left: 19%;
+          margin-top: 40%;
+        }
+        .search {
+          top: 21%;
+          left: 15%;
+        }
+        .aside {
+          width: 30vw;
+          font-size: 6pt;
+        }
+
+        img.main {
+          height: 50px;
+          width: 100px;
+        }
+
+        body {
+          font-size: 10pt;
+        }
+
+        section {
+          height: 100px;
+          width: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="#">Фильмы</a>
+        <a href="#">Сериалы</a>
+        <a href="#">Документальное кино</a>
+        <a href="#">Клипы</a>
+        <a href="#">Аниме</a>
+      </nav>
+      <div class="search">
+        <input
+          class="search-txt"
+          type="text"
+          name=""
+          placeholder="Введите запрос"
+        />
+        <a class="search-btn" href="#"></a>
+      </div>
+      <h1>Insider</h1>
+    </header>
+    <div class="container">
+      <aside class="aside">
+        <div class="logo">
+          <h2><img src="assets/cinema_icon.png" alt="cinema" />Смотреть</h2>
+        </div>
+        <a href="#"><img src="assets/house_icon.png" alt="house" />Домой</a>
+        <a href="#"><img src="assets/heart_icon.png" alt="heart" />Избранное</a>
+        <a href="#"
+          ><img src="assets/winner_icon.png" alt="winner" />Популярное</a
+        >
+        <a href="#"><img src="assets/clock_icon.png" alt="clock" />Скоро</a>
+        <a href="#"
+          ><img src="assets/community_icon.png" alt="community" />Сообщества</a
+        >
+        <a href="#"
+          ><img
+            src="assets/social-media_logo.png"
+            alt="social media"
+          />Социальные сети</a
+        >
+        <a href="#"
+          ><img src="assets/settings_icon.png" alt="settings" />Настройки</a
+        >
+        <a href="#"><img src="assets/enter_icon.png" alt="enter" />Вход</a>
+      </aside>
+      <main class="main">
+        <section class="section">
+          <h2>Самые известные актеры в мире</h2>
+          <a href="https://ru.wikipedia.org/wiki/Депп,_Джонни"
+            ><img class="section_img" src="assets/depp.jpg" alt="джонни депп"
+          /></a>
+          <a href="https://ru.wikipedia.org/wiki/Шварценеггер,_Арнольд"
+            ><img
+              class="section_img"
+              src="assets/arny.jpg"
+              alt="арнольд шварценеггер"
+          /></a>
+          <a href="https://ru.wikipedia.org/wiki/Керри,_Джим"
+            ><img class="section_img" src="assets/jim.jpg" alt="джим керри"
+          /></a>
+          <a href="https://ru.wikipedia.org/wiki/Ди_Каприо,_Леонардо"
+            ><img
+              class="section_img"
+              src="assets/leo.jpg"
+              alt="леонардо ди каприо"
+          /></a>
+          <a href="https://ru.wikipedia.org/wiki/Питт,_Брэд"
+            ><img class="section_img" src="assets/pitt.jpg" alt="бред питт"
+          /></a>
+        </section>
+        <section class="section">
+          <h3>Лучшие фильмы 2023</h3>
+          <a href="https://www.kinopoisk.ru/media/article/4007926/"
+            ><img
+              class="section_img"
+              src="assets/spiderman.jpg"
+              alt="человек паук"
+          /></a>
+          <a href="https://www.kinopoisk.ru/film/1044280/"
+            ><img
+              class="section_img"
+              src="assets/galaxy.jpg"
+              alt="стражи галактики"
+          /></a>
+          <a href="https://www.kinopoisk.ru/film/1267348/"
+            ><img class="section_img" src="assets/john4.jpg" alt="джон уик4"
+          /></a>
+          <a href="https://www.kinopoisk.ru/film/762646/"
+            ><img
+              class="section_img"
+              src="assets/d&d.jpg"
+              alt="подземелье и драконы"
+          /></a>
+          <a href="https://www.kinopoisk.ru/film/5000997/"
+            ><img class="section_img" src="assets/air.jpg" alt="большой прыжок"
+          /></a>
+        </section>
+        <section class="section">
+          <h4>Трейлеры к фильмам</h4>
+          <video
+            class="section_img"
+            src="assets/Человек-паук.mp4"
+            controls
+          ></video>
+          <video src="assets/стражи3.mp4" controls></video>
+          <video src="assets/weak4.mp4" controls></video>
+          <video src="assets/dragons.mp4" controls></video>
+          <video src="assets/jump.mp4" controls></video>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer_links">
+          <a href="#"
+            ><img src="assets/instagram_app_icon.png" alt="inst" />Instagram</a
+          >
+        </div>
+        <a href="#"><img src="assets/vk_icon.png" alt="vk" />Вконтакте</a>
+        <a href="#"><img src="assets/tg-icon.png" alt="heart" />Телеграм</a>
+      </footer>
+    </div>
+  </body>
+</html>

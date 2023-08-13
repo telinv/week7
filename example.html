@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Пример из статьи</title>
+    <style>
+      .container {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: repeat(2, 300px);
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div><img src="assets/pug1.jpg" alt="pug1" /></div>
+      <div><img src="assets/pug2.jpg" alt="pug2" /></div>
+      <div><img src="assets/pug3.jpg" alt="pug3" /></div>
+      <div><img src="assets/pug4.jpg" alt="pug4" /></div>
+      <div><img src="assets/pug5.jpg" alt="pug5" /></div>
+      <div><img src="assets/pug6.jpg" alt="pug6" /></div>
+    </div>
+  </body>
+</html>
